@@ -365,16 +365,21 @@ namespace Lab0
             
             var currentNode = Next(node);
 
-            var dupeKey = node.Key;
-            var dupeVal = node.Value;
-            node.Key = currentNode.Key;
-            node.Value = currentNode.Value;
-            currentNode.Key = dupeKey;
-            currentNode.Value = dupeVal;
+            //var dupeKey = node.Key;
+            //var dupeVal = node.Value;
+            //node.Key = currentNode.Key;
+            //node.Value = currentNode.Value;
+            //currentNode.Key = dupeKey;
+            //currentNode.Value = dupeVal;
+
+            var dupeKey = currentNode.Key;
+            var dupeVal = currentNode.Value;
 
             Remove(currentNode.Key);
-            return;
 
+            node.Key = dupeKey;
+            node.Value = dupeVal;
+            
         }
 
         // TODO
