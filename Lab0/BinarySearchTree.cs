@@ -199,6 +199,10 @@ namespace Lab0
                     {
                         return parentNode;
                     }
+                    if (parentNode.Parent == null)
+                    {
+                        return null;
+                    }
                     else
                     {
                         while ((parentNode != parentNode.Parent.Left) && (parentNode != Root))
@@ -358,10 +362,7 @@ namespace Lab0
             // Swap Key and Data from successor to node
             // Remove the successor (a leaf node) (like case 1)
 
-            if (Next(node) == null)
-            {
-                Clear();
-            }
+            
             var currentNode = Next(node);
 
             var dupeKey = node.Key;
